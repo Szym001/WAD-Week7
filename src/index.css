@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+* { box-sizing: border-box; }
+:root { font-family: 'DM Sans', sans-serif; color: #172036; background: #f2f4fa; font-synthesis: none; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { border: 0; border-radius: 10px; padding: .72rem 1rem; color: white; background: #6157e7; font-weight: 700; cursor: pointer; transition: transform .15s, opacity .15s; }
+button:hover { transform: translateY(-1px); } button:disabled { cursor: not-allowed; opacity: .45; transform: none; }
+.theme { min-height: 100vh; background: #f2f4fa; color: #172036; transition: background .2s, color .2s; }
+.theme.dark { background: #111526; color: #eef0ff; }
+.app-shell { max-width: 1120px; margin: auto; padding: 2rem 1.25rem 4rem; }
+.site-header { border-radius: 24px; padding: 2.2rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: white; background: linear-gradient(120deg, #4f46d9, #a442cc); box-shadow: 0 18px 45px #554bd133; }
+h1, h2, h3, p { margin-top: 0; } h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; } h1 { margin: .25rem 0; font-size: clamp(1.9rem, 5vw, 3rem); } h2 { margin: .3rem 0 1.2rem; font-size: 1.3rem; } .site-header p { margin: 0; opacity: .85; }
+.eyebrow, .concept-label { text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; font-weight: 700; }
+.theme-button { background: #ffffff24; border: 1px solid #ffffff55; white-space: nowrap; }
+.panel { background: white; border: 1px solid #e4e7f2; border-radius: 18px; padding: 1.4rem; margin-bottom: 1.25rem; box-shadow: 0 8px 24px #2930590a; }
+.dark .panel { background: #1b2035; border-color: #313750; } .dark-card { box-shadow: 0 0 0 1px #7770e744; }
+.concept-label { color: #675fe0; } .dark .concept-label { color: #a9a4ff; }
+form { display: flex; gap: .7rem; } input { min-width: 0; flex: 1; padding: .85rem 1rem; border: 1px solid #ccd1e1; border-radius: 10px; background: transparent; color: inherit; outline: none; } input:focus { border-color: #675fe0; box-shadow: 0 0 0 3px #675fe022; }
+.song-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; }
+.song-card { display: grid; grid-template-columns: 72px 1fr auto; gap: 1rem; align-items: center; padding: 1rem; background: #f7f8fc; border-radius: 14px; border: 1px solid #eaecf4; }
+.dark .song-card { background: #242a42; border-color: #353c58; }
+.album-block { width: 72px; height: 72px; display: grid; place-items: center; border-radius: 13px; font-size: 2rem; color: white; background: #675fe0; } .colour-1 { background: #ea5c7a; } .colour-2 { background: #ee8b42; } .colour-3 { background: #3d9caf; } .colour-4 { background: #8d64d7; }
+.song-info { min-width: 0; } .song-info h3 { margin: 0; } .song-info p { margin: .15rem 0; color: #777e91; font-size: .88rem; } .song-info .artist { color: inherit; font-weight: 700; }.song-meta { display: flex; gap: .45rem; margin-top: .5rem; flex-wrap: wrap; }.song-meta span { background: #e9e9f6; border-radius: 20px; padding: .18rem .5rem; font-size: .72rem; }.dark .song-meta span { background: #343a56; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }.mini-panel { margin: 0; min-height: 230px; }.status { color: #7a8194; }.error { color: #c73f58; }.now-playing { display: flex; gap: 1rem; align-items: center; }.now-playing h3, .now-playing p { margin-bottom: .2rem; }.record { width: 72px; height: 72px; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center; color: white; font-size: 1.8rem; background: radial-gradient(circle, #191b29 15%, #8a48ca 16%, #5045d7 65%, #191b29 67%); }.timer { font: 700 3rem 'Space Grotesk'; margin: 1rem 0; letter-spacing: .05em; }.button-row { display: flex; gap: .5rem; flex-wrap: wrap; }.secondary { background: #e8e9f2; color: #35394b; }.dark .secondary { background: #343a56; color: #eef0ff; }.mini-panel ul { padding-left: 1.3rem; max-height: 80px; overflow: auto; }
+@media (max-width: 850px) { .song-list { grid-template-columns: 1fr; } .dashboard-grid { grid-template-columns: 1fr; } .mini-panel { min-height: auto; } }
+@media (max-width: 600px) { .site-header { align-items: flex-start; flex-direction: column; padding: 1.5rem; } form { flex-direction: column; } .song-card { grid-template-columns: 58px 1fr; } .album-block { width: 58px; height: 58px; } .song-card > button { grid-column: 1 / -1; } }

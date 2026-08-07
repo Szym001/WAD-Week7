@@ -1,0 +1,2 @@
+interface SearchHistoryProps { history: string[]; onClear: () => void; }
+export default function SearchHistory({ history, onClear }: SearchHistoryProps) { return <section className="panel mini-panel"><span className="concept-label">State Array + map()</span><h2>Search History</h2>{history.length === 0 ? <p className="status">No searches yet</p> : <ul>{history.map((term, index) => <li key={`${term}-${index}`}>{term}</li>)}</ul>}<button className="secondary" onClick={onClear} disabled={history.length === 0}>Clear History</button></section>; }
